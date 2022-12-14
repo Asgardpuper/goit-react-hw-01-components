@@ -1,4 +1,5 @@
 import FriendsListItem from "./FriendListItem";
+import PropTypes from "prop-types";
 import { UserContainer, UserList } from "./FriendsList.styled";
 export default function FriendsList({ friends }) {
 	return (
@@ -9,3 +10,7 @@ export default function FriendsList({ friends }) {
 		</UserContainer>
 	);
 }
+
+FriendsList.propTypes = {
+	friends: PropTypes.arrayOf(PropTypes.shape),
+};

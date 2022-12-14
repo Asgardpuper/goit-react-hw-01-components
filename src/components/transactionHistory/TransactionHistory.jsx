@@ -1,5 +1,5 @@
 import { Table, TableContainer, Td, Th } from "./TransactionHistory.styled";
-
+import PropTypes from "prop-types";
 export default function TransactionHistory({ transactions }) {
 	return (
 		<TableContainer>
@@ -27,3 +27,14 @@ export default function TransactionHistory({ transactions }) {
 		</TableContainer>
 	);
 }
+
+TransactionHistory.propTypes = {
+	transaction: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+			type: PropTypes.string.isRequired,
+			amount: PropTypes.number.isRequired,
+			currency: PropTypes.string.isRequired,
+		})
+	),
+};

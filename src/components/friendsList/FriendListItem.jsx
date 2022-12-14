@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import {
 	UserCard,
 	UserImage,
@@ -23,3 +24,10 @@ export default function FriendsListItem({ avatar, name, isOnline, id }) {
 		</UserCard>
 	);
 }
+
+FriendsListItem.propTypes = {
+	avatar: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	isOnline: PropTypes.bool,
+	id: PropTypes.number,
+};
